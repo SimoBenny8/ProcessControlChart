@@ -1,0 +1,585 @@
+commit 50f3f12
+Author: Hao Chen <hchen9@ebay.com>
+Date:   2017-11-18T22:15:32+08:00
+
+    [BAHIR-144] Add flink-library-siddhi
+    
+    This closes #22
+
+A	flink-library-siddhi/pom.xml
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/SiddhiCEP.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/SiddhiStream.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/exception/DuplicatedStreamException.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/exception/UndefinedStreamException.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/operator/AbstractSiddhiOperator.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/operator/SiddhiOperatorContext.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/operator/SiddhiStreamOperator.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/operator/StreamInMemOutputHandler.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/operator/StreamOutputHandler.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/operator/StreamRecordComparator.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/package-info.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/schema/SiddhiStreamSchema.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/schema/StreamSchema.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/schema/StreamSerializer.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/utils/SiddhiStreamFactory.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/utils/SiddhiTupleFactory.java
+A	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/utils/SiddhiTypeFactory.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/SiddhiCEPITCase.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/extension/CustomPlusFunctionExtension.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/operator/SiddhiSyntaxTest.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/schema/SiddhiExecutionPlanSchemaTest.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/schema/StreamSchemaTest.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/schema/StreamSerializerTest.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/source/Event.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/source/RandomEventSource.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/source/RandomTupleSource.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/source/RandomWordSource.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/utils/SiddhiTupleFactoryTest.java
+A	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/utils/SiddhiTypeFactoryTest.java
+A	flink-library-siddhi/src/test/resources/log4j-test.properties
+A	flink-library-siddhi/src/test/resources/logback-test.xml
+M	pom.xml
+commit c760e3c
+Author: Joao Boto <boto@boto.pro>
+Date:   2018-07-25T20:17:36+02:00
+
+    [BAHIR-99] kudu connector
+
+M	.travis.yml
+A	flink-connector-kudu/README.md
+A	flink-connector-kudu/dockers/docker-compose.yml
+A	flink-connector-kudu/dockers/role/Dockerfile
+A	flink-connector-kudu/dockers/role/docker-entrypoint.sh
+A	flink-connector-kudu/dockers/run_kudu_tests.sh
+A	flink-connector-kudu/dockers/start-images.sh
+A	flink-connector-kudu/dockers/stop-images.sh
+A	flink-connector-kudu/pom.xml
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduInputFormat.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduOutputFormat.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduSink.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduColumnInfo.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduConnector.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduFilterInfo.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduMapper.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduRow.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduTableInfo.java
+A	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduInputFormatTest.java
+A	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduOuputFormatTest.java
+A	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduSinkTest.java
+A	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/connector/KuduDatabase.java
+M	pom.xml
+commit 1304758
+Author: ariskk <ak.koliopoulos@gmail.com>
+Date:   2017-03-14T10:13:32+00:00
+
+    [BAHIR-95] Add ZREM to Redis commands
+    
+    This closes #13
+
+M	flink-connector-redis/README.md
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisSink.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisClusterContainer.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisCommandsContainer.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisContainer.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisCommand.java
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisSinkITCase.java
+commit 3f18034
+Author: Tzu-Li (Gordon) Tai <tzulitai@apache.org>
+Date:   2017-03-01T14:41:21+08:00
+
+    [BAHIR-91] Upgrade Flink version to 1.2.0
+    
+    This closes #11
+    This closes #9 (Closing PR due to inactivity)
+
+M	.travis.yml
+M	flink-connector-activemq/pom.xml
+M	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/AMQSourceTest.java
+M	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/ActiveMQConnectorITCase.java
+M	flink-connector-redis/pom.xml
+M	pom.xml
+commit 1f839d5
+Author: Robert Metzger <rmetzger@apache.org>
+Date:   2016-08-23T16:42:50+02:00
+
+    [BAHIR-58] Add ActiveMQ connector
+    
+    Closes #3
+
+M	.travis.yml
+A	flink-connector-activemq/pom.xml
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/AMQSink.java
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/AMQSinkConfig.java
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/AMQSource.java
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/AMQSourceConfig.java
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/DestinationType.java
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/internal/AMQExceptionListener.java
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/internal/AMQUtil.java
+A	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/internal/RunningChecker.java
+A	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/AMQExceptionListenerTest.java
+A	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/AMQSinkTest.java
+A	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/AMQSourceTest.java
+A	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/ActiveMQConnectorITCase.java
+M	flink-connector-flume/pom.xml
+M	pom.xml
+commit 7dce2db
+Author: Robert Metzger <rmetzger@apache.org>
+Date:   2016-08-22T16:48:59+02:00
+
+    [BAHIR-57] Add Flume sink
+    
+    Closes #2
+
+A	flink-connector-flume/pom.xml
+A	flink-connector-flume/src/main/java/org/apache/flink/streaming/connectors/flume/FlumeSink.java
+M	flink-connector-redis/pom.xml
+M	pom.xml
+commit b2955a7
+Author: Robert Metzger <rmetzger@apache.org>
+Date:   2016-08-19T10:55:30+02:00
+
+    [BAHIR-55] Add Redis connector from Flink
+    
+    Closes #1
+
+M	dev/checkstyle.xml
+A	flink-connector-redis/pom.xml
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisSink.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/Util.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisClusterConfig.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisConfigBase.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisPoolConfig.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisSentinelConfig.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisClusterContainer.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisCommandsContainer.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisCommandsContainerBuilder.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisContainer.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisCommand.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisCommandDescription.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisDataType.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisMapper.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisITCaseBase.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisSentinelClusterTest.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisSinkITCase.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisSinkPublishITCase.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisSinkTest.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisConfigBaseTest.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/config/JedisClusterConfigTest.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/config/JedisPoolConfigTest.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/config/JedisSentinelConfigTest.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisDataTypeDescriptionTest.java
+A	flink-connector-redis/src/test/resources/log4j.properties
+M	pom.xml
+commit b618a77
+Author: yiksanchan <evan.chanyiksan@gmail.com>
+Date:   2021-03-12T16:16:37+08:00
+
+    [BAHIR-267] Fix FlinkJedisConfig names in toString methods (#120)
+
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisClusterConfig.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisPoolConfig.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisSentinelConfig.java
+
+commit cabee21
+Author: yiksanchan <evan.chanyiksan@gmail.com>
+Date:   2021-03-12T16:14:34+08:00
+
+    [BAHIR-267] Unify Redis commands builder (#119)
+
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisCommandsContainerBuilder.java
+
+commit bfc09d3
+Author: Joao Boto <boto@boto.pro>
+Date:   2021-03-12T08:53:06+01:00
+
+    [BAHIR-263] Update flink to 1.12.2 (#115)
+
+M	.travis.yml
+M	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/ActiveMQConnectorITCase.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduCatalogTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduTableFactoryTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduTableSourceTest.java
+A	flink-connector-kudu/src/test/resources/log4j.properties
+M	pom.xml
+
+commit abd9941
+Author: cheegoday <972684638@qq.com>
+Date:   2021-03-12T01:46:10+08:00
+
+    [BAHIR-263] Update flink version to 1.11.3 (#112)
+    
+    BAHIR-263 - update flink version to 1.11.3
+    BAHIR-263 - fix netty connector unit test
+
+M	.travis.yml
+M	flink-connector-netty/pom.xml
+M	flink-connector-netty/src/test/scala/org/apache/flink/streaming/connectors/netty/example/StreamSqlExample.scala
+M	pom.xml
+
+commit 464a08f
+Author: yiksanchan <evan.chanyiksan@gmail.com>
+Date:   2021-03-12T01:42:17+08:00
+
+    [BAHIR-266] Redis - Fix java8 stream use (#117)
+
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/handler/FlinkJedisClusterConfigHandler.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/handler/FlinkJedisSentinelConfigHandler.java
+
+commit b4efa30
+Author: yiksanchan <evan.chanyiksan@gmail.com>
+Date:   2021-03-12T01:37:41+08:00
+
+    [BAHIR-264] Fix dependencies in flink-connector-redis (#116)
+    
+    * [BAHIR-264] Dedup dependencies
+    * [BAHIR-264] Change hardcode scala binary version 2.11
+
+M	flink-connector-redis/pom.xml
+
+commit 9dcb7d6
+Author: yiksanchan <evan.chanyiksan@gmail.com>
+Date:   2021-03-12T01:35:24+08:00
+
+    [BAHIR-265] Fix Redis log messages (#118)
+
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisClusterContainer.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisContainer.java
+
+commit f968c81
+Author: ahern88 <ahern88@163.com>
+Date:   2021-03-11T20:59:12+08:00
+
+    [BAHIR-262] Add support to redis cluster password (#101)
+    
+    * support set redis cluster password
+
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisTableSinkFactory.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/handler/FlinkJedisClusterConfigHandler.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/descriptor/RedisValidator.java
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/RedisHandlerTest.java
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/config/JedisClusterConfigTest.java
+
+commit 567a887
+Author: housezhang <pop_1987@126.com>
+Date:   2021-01-22T22:21:27+08:00
+
+    [BAHIR-257] RedisDescriptorTest add TableFactory sql operate test (#108)
+    
+    Co-authored-by: house.zhang
+
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisDescriptorTest.java
+
+commit d169452
+Author: housezhang <pop_1987@126.com>
+Date:   2021-01-11T14:57:46+08:00
+
+    [BAHIR-254] Update Redis to remove usage of deprecated methods (#102)
+    
+    RedisDescriptorTest that uses SQL or TAB API will run exception(flink1.11)
+    because use Deprecated method and field
+    
+    Co-authored-by: house.zhang <>
+
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisTableSinkFactory.java
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisDescriptorTest.java
+
+commit f0b3e1e
+Author: Gyula Fora <gyfora@apache.org>
+Date:   2020-09-24T20:16:10+02:00
+
+    [BAHIR-241] Upgrade all connectors to Flink 1.11 (#99)
+    
+    Co-authored-by: Gyula Fora <gyula@cloudera.com>
+
+M	.travis.yml
+M	flink-connector-flume/pom.xml
+M	flink-connector-kudu/pom.xml
+M	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/reader/KuduReader.java
+M	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/writer/KuduWriter.java
+M	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/table/KuduTableFactory.java
+M	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/table/KuduTableSink.java
+R096	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/batch/KuduOuputFormatTest.java	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/batch/KuduOutputFormatTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/streaming/KuduSinkTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduCatalogTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduTableFactoryTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduTableSourceITCase.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduTableSourceTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/table/KuduTableTestUtils.java
+R070	flink-connector-kudu/src/test/resources/log4j.properties	flink-connector-kudu/src/test/resources/log4j2-test.properties
+M	flink-connector-netty/src/test/scala/org/apache/flink/streaming/connectors/netty/example/StreamSqlExample.scala
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisTableSink.java
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisDescriptorTest.java
+M	pom.xml
+
+commit ff681dc
+Author: Joao Boto <jboto@idealista.com>
+Date:   2020-09-05T05:22:36+02:00
+
+    [BAHIR-245] Add git .asf.yaml file (#98)
+
+A	.asf.yaml
+
+commit 8a4cadc
+Author: Joao Boto <boto@boto.pro>
+Date:   2020-08-27T21:39:38+02:00
+
+    [BAHIR-244] Update travis dist to bionic (#97)
+
+M	.travis.yml
+
+commit 86cce39
+Author: Joao Boto <boto@boto.pro>
+Date:   2020-07-28T17:41:33+02:00
+
+    BAHIR-240: replace docker test by testcontainer (#89)
+
+M	.travis.yml
+D	flink-connector-flume/dockers/docker-compose.yml
+M	flink-connector-flume/pom.xml
+D	flink-connector-flume/src/test/java/org/apache/flink/streaming/connectors/flume/DockerTest.java
+A	flink-connector-flume/src/test/java/org/apache/flink/streaming/connectors/flume/FlumeServerTest.java
+M	flink-connector-flume/src/test/java/org/apache/flink/streaming/connectors/flume/FlumeSinkTest.java
+M	flink-connector-flume/src/test/java/org/apache/flink/streaming/connectors/flume/FlumeUtilsTest.java
+R100	flink-connector-flume/dockers/conf/sink.conf	flink-connector-flume/src/test/resources/docker/conf/sink.conf
+R100	flink-connector-flume/dockers/conf/source.conf	flink-connector-flume/src/test/resources/docker/conf/source.conf
+M	flink-connector-kudu/pom.xml
+M	pom.xml
+
+commit f86a478
+Author: hzyuemeng1 <hzyuemeng1@corp.netease.com>
+Date:   2020-03-14T08:01:30+08:00
+
+    [BAHIR-220] Add redis descriptor to enable connection as a table (#72)
+    
+    Add Redis table sink so we can register it to catalog,
+    and use Redis as a table in SQL environment
+
+M	flink-connector-redis/pom.xml
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisSink.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisTableSink.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/RedisTableSinkFactory.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/handler/FlinkJedisClusterConfigHandler.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/handler/FlinkJedisSentinelConfigHandler.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisClusterContainer.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisCommandsContainer.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisContainer.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/hanlder/FlinkJedisConfigHandler.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/hanlder/RedisHandler.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/hanlder/RedisHandlerServices.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/hanlder/RedisMapperHandler.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisCommand.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/RedisCommandDescription.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/DecrByExMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/DecrByMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/HSetMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/IncrByExMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/IncrByMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/LPushMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/PfAddMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/RPushMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/RowRedisMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/SAddMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/SetExMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/SetMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/mapper/row/ZAddMapper.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/descriptor/Redis.java
+A	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/descriptor/RedisVadidator.java
+A	flink-connector-redis/src/main/resources/META-INF/services/org.apache.flink.streaming.connectors.redis.common.hanlder.RedisHandler
+A	flink-connector-redis/src/main/resources/META-INF/services/org.apache.flink.table.factories.TableFactory
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/RedisDescriptorTest.java
+A	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/RedisHandlerTest.java
+
+commit 55240a9
+Author: Joao Boto <boto@boto.pro>
+Date:   2019-09-03T02:05:56+02:00
+
+    [BAHIR-214] Improve speed and solve eventual consistence issues (#64)
+    
+    * resolve eventual consistency issues
+    * improve speed special on eventual consistency stream
+    * Update Readme
+
+M	flink-connector-kudu/README.md
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/batch/KuduInputFormat.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/batch/KuduOutputFormat.java
+R098	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduColumnInfo.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/KuduColumnInfo.java
+R097	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduFilterInfo.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/KuduFilterInfo.java
+R095	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduRow.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/KuduRow.java
+R097	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduTableInfo.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/KuduTableInfo.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/failure/DefaultKuduFailureHandler.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/failure/KuduFailureHandler.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/reader/KuduInputSplit.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/reader/KuduReader.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/reader/KuduReaderConfig.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/reader/KuduReaderIterator.java
+R090	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/serde/DefaultSerDe.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/serde/DefaultSerDe.java
+R088	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/serde/KuduDeserialization.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/serde/KuduDeserialization.java
+R089	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/serde/KuduSerialization.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/serde/KuduSerialization.java
+R095	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/serde/PojoSerDe.java	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/serde/PojoSerDe.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/writer/KuduWriter.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/writer/KuduWriterConfig.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/writer/KuduWriterConsistency.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/connector/writer/KuduWriterMode.java
+A	flink-connector-kudu/src/main/java/org/apache/flink/connectors/kudu/streaming/KuduSink.java
+D	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduInputFormat.java
+D	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduOutputFormat.java
+D	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduSink.java
+D	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduConnector.java
+D	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduMapper.java
+D	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduRowIterator.java
+R061	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduInputFormatTest.java	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/batch/KuduInputFormatTest.java
+R063	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduOuputFormatTest.java	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/batch/KuduOuputFormatTest.java
+R064	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/connector/KuduDatabase.java	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/connector/KuduDatabase.java
+R087	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/serde/PojoSerDeTest.java	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/connector/serde/PojoSerDeTest.java
+A	flink-connector-kudu/src/test/java/org/apache/flink/connectors/kudu/streaming/KuduSinkTest.java
+D	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduSinkTest.java
+
+commit cd18714
+Author: Joao Boto <boto@boto.pro>
+Date:   2019-08-26T16:50:56+02:00
+
+    [BAHIR-215] Bump flink version to 1.9.0 (#65)
+
+M	.travis.yml
+M	flink-connector-activemq/pom.xml
+M	flink-connector-akka/pom.xml
+M	flink-connector-akka/src/main/java/org/apache/flink/streaming/connectors/akka/AkkaSource.java
+M	flink-connector-flume/pom.xml
+M	pom.xml
+
+commit 311eea1
+Author: Joao Boto <boto@boto.pro>
+Date:   2019-08-21T06:04:27+02:00
+
+    [BAHIR-210] upgrade flink to 1.8.1 (#62)
+
+M	.travis.yml
+M	pom.xml
+
+commit bdb39f3
+Author: Joao Boto <boto@boto.pro>
+Date:   2019-07-04T00:13:51+02:00
+
+    [BAHIR-207] Add tests for scala 2.12 on travis (#59)
+
+M	.travis.yml
+M	flink-connector-activemq/pom.xml
+M	flink-connector-flume/src/main/java/org/apache/flink/streaming/connectors/flume/FlumeSink.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduOuputFormatTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduSinkTest.java
+M	flink-connector-redis/pom.xml
+M	flink-library-siddhi/src/main/java/org/apache/flink/streaming/siddhi/utils/SiddhiTupleFactory.java
+M	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/SiddhiCEPITCase.java
+M	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/schema/StreamSchemaTest.java
+M	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/source/Event.java
+M	flink-library-siddhi/src/test/java/org/apache/flink/streaming/siddhi/utils/SiddhiTupleFactoryTest.java
+M	pom.xml
+
+commit 7f1d6af
+Author: Joao Boto <boto@boto.pro>
+Date:   2019-07-04T00:11:57+02:00
+
+    [BAHIR-209] upgrade kudu version to 1.10.0 (#61)
+
+M	flink-connector-kudu/pom.xml
+
+commit d14557f
+Author: Like <ke.like@outlook.com>
+Date:   2019-06-08T16:10:18+08:00
+
+    [BAHIR-205] Support password configuration for redis cluster
+    
+    Upgrade jedis to 2.9.0 and add password for redis cluster sink.
+    
+    Closes #57
+
+M	flink-connector-redis/pom.xml
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisClusterConfig.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisConfigBase.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisPoolConfig.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisSentinelConfig.java
+M	flink-connector-redis/src/main/java/org/apache/flink/streaming/connectors/redis/common/container/RedisCommandsContainerBuilder.java
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/config/FlinkJedisConfigBaseTest.java
+M	flink-connector-redis/src/test/java/org/apache/flink/streaming/connectors/redis/common/config/JedisClusterConfigTest.java
+
+commit 2c90823
+Author: Joao Boto <boto@boto.pro>
+Date:   2019-05-26T02:45:25+02:00
+
+    [BAHIR-200] Move tests from docker to kudu-test-utils (#49)
+
+M	.travis.yml
+D	flink-connector-kudu/dockers/docker-compose.yml
+D	flink-connector-kudu/dockers/role/Dockerfile
+D	flink-connector-kudu/dockers/role/docker-entrypoint.sh
+D	flink-connector-kudu/dockers/run_kudu_tests.sh
+D	flink-connector-kudu/dockers/start-images.sh
+D	flink-connector-kudu/dockers/stop-images.sh
+M	flink-connector-kudu/pom.xml
+M	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduFilterInfo.java
+D	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/DockerTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduInputFormatTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduOuputFormatTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/KuduSinkTest.java
+M	flink-connector-kudu/src/test/java/org/apache/flink/streaming/connectors/kudu/connector/KuduDatabase.java
+M	pom.xml
+
+commit 568bb5b
+Author: eskabetxe <boto@boto.pro>
+Date:   2019-05-16T15:57:17+02:00
+
+    [BAHIR-206] Update Flink to release 1.8.0
+    
+    Closes #54
+
+M	.travis.yml
+M	flink-connector-activemq/pom.xml
+M	flink-connector-activemq/src/test/java/org/apache/flink/streaming/connectors/activemq/ActiveMQConnectorITCase.java
+M	flink-connector-netty/pom.xml
+M	flink-connector-netty/src/test/scala/org/apache/flink/streaming/connectors/netty/example/StreamSqlExample.scala
+M	pom.xml
+
+commit 8dc8e7e
+Author: SuXingLee <913910636@qq.com>
+Date:   2019-03-22T20:08:33+08:00
+
+    [BAHIR-202] Improve KuduSink throughput using async FlushMode
+    
+    By default, KuduSink processing message one by one
+    without checkpoint. When checkoint is enabled, throughput
+    is improved by using FlushMode.AUTO_FLUSH_BACKGROUND,
+    and use checkpoint to ensure at-least-once.
+    
+    Closes #50
+
+M	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduOutputFormat.java
+M	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/KuduSink.java
+M	flink-connector-kudu/src/main/java/org/apache/flink/streaming/connectors/kudu/connector/KuduConnector.java
+
+commit c1310f5
+Author: Luciano Resende <lresende@apache.org>
+Date:   2019-05-17T23:24:09+02:00
+
+    [BAHIR-206] Revert back to Flink version 1.7.2
+    
+    This reverts commit 86ad89f4e9c0644a725673fdad8a5548ca837fcc.
+
+M	pom.xml
+
+commit 86ad89f
+Author: eskabetxe <boto@boto.pro>
+Date:   2019-05-16T15:57:17+02:00
+
+    [BAHIR-206] bump flink version to 1.8.0
+    
+    Closes #54
+
+M	pom.xml
+
+commit 3f1b3ba
+Author: Konstantin Knauf <knauf.konstantin@gmail.com>
+Date:   2019-04-11T17:11:56+02:00
+
+    [BAHIR-204] [activemq] ActiveMQ Source only emits previously unprocessed records now
+
+M	flink-connector-activemq/src/main/java/org/apache/flink/streaming/connectors/activemq/AMQSource.java

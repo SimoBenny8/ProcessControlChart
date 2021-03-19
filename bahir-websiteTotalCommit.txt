@@ -1,0 +1,18 @@
+commit b30d92b
+Author: Luciano Resende <lresende@apache.org>
+Date:   2016-08-15T13:21:56-07:00
+
+    [BAHIR-37] Publish Bahir 2.0.0 documentation
+    
+    Publish Bahir 2.0.0 documentation and update current documentation
+    to use artifacts from master : 2.1.0-SNAPSHOT
+
+M	site/_data/navigation.yml
+M	site/_data/project.yml
+A	site/docs/spark/2.0.0/documentation.md
+A	site/docs/spark/2.0.0/spark-sql-streaming-mqtt.md
+A	site/docs/spark/2.0.0/spark-streaming-akka.md
+A	site/docs/spark/2.0.0/spark-streaming-mqtt.md
+A	site/docs/spark/2.0.0/spark-streaming-twitter.md
+A	site/docs/spark/2.0.0/spark-streaming-zeromq.md
+M	site/docs/spark/current/documentation.md

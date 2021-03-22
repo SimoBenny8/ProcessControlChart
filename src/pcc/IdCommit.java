@@ -17,7 +17,7 @@ public class IdCommit {
 	    throw new IllegalStateException("Utility class");
 	}
 	
-	public static void commitString(String wordToSearch, String project,String fileName, int i) throws IOException,InterruptedException {
+	public static void commitString(String wordToSearch, String project,String fileName, int i) throws IOException{
 		
 		String s;
         Process p;
@@ -36,9 +36,9 @@ public class IdCommit {
                 p.waitFor();
                 p.destroy();
                 
-        	 }catch (Exception e) {
+        	 }catch (InterruptedException e) {
             	logger.log(Level.WARNING,ERRORSTR);
-            	p.destroy();
+            	Thread.currentThread().interrupt();
         	 }
          }else {
         	 try(FileWriter result = new FileWriter(outname)){
@@ -50,9 +50,9 @@ public class IdCommit {
                  p.waitFor();
                  p.destroy();
                  
-             }catch (Exception e) {
+             }catch (InterruptedException e) {
              	logger.log(Level.WARNING,ERRORSTR);
-             	p.destroy();
+             	Thread.currentThread().interrupt();
              }
          }
          

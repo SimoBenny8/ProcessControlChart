@@ -17,7 +17,7 @@ public class IdCommit {
 	    throw new IllegalStateException("Utility class");
 	}
 	
-	public static void commitString(String wordToSearch, String project,String fileName, int i) throws IOException {
+	public static void commitString(String wordToSearch, String project,String fileName, int i) throws IOException,InterruptedException {
 		
 		String s;
         Process p;

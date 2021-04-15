@@ -24,7 +24,7 @@ public class IdCommit {
         String outname = fileName + "TotalCommit.txt";
         
         	
-         p = Runtime.getRuntime().exec("cmd /c cd "+project+"&& git log --grep="+wordToSearch+" --date=iso-strict --name-status --stat HEAD --abbrev-commit");
+         p = Runtime.getRuntime().exec("cmd /c cd "+project+"&& git log --grep="+wordToSearch + "]" +" --date=iso-strict --name-status --stat HEAD --abbrev-commit");
          BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
          if(i != 0) {
         	 try(FileWriter result = new FileWriter(outname,true)){

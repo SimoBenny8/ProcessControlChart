@@ -19,13 +19,10 @@ public class ProcessControlChart {
 		
 		try {
 			id = (ArrayList<String>) RetrieveTicketsID.getIdCommit(progName);
-		} catch (JSONException e) {
+		} catch (JSONException|IOException e) {
 			
 			e.printStackTrace();
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
+		} 
 		
 		
 		for(int i=0; i<id.size(); i++) {
